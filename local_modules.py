@@ -1,7 +1,7 @@
 from googleapiclient.discovery import build
 
 def youtube_search(search: str, max_results = 10):
-    serv = build("youtube", "v3", developerKey = "AIzaSyDPNT5C7ke7uRzm59HWadjg2UKonlWmMhI")
+    serv = build("youtube", "v3", developerKey = "nuh uh!")
     req = serv.search().list(part = "snippet", 
                             q = search, 
                             maxResults = max_results
@@ -28,7 +28,7 @@ def youtube_search(search: str, max_results = 10):
 
 
 def youtube_video(video: str):
-    serv = build("youtube", "v3", developerKey = "AIzaSyA6WI8YWl3Y2JxH6p8tgQZnCrt2Synx0rA")
+    serv = build("youtube", "v3", developerKey = "nuh uh!")
     req = serv.videos().list(part = "snippet", id = video, maxResults = 1)
 
     response = req.execute()

@@ -29,7 +29,7 @@ def generate_code():
     ## SETTINGS
 
 app = Flask(__name__)
-app.config["SQLALCHEMY_DATABASE_URI"] = "postgresql://ekktowdczhzjxp:c12004f1920dd5762007b3a7bf7d72a2d23c84cffb2d3b2b793228a58108c93d@ec2-52-31-217-108.eu-west-1.compute.amazonaws.com:5432/dfchdq02phv7al"
+app.config["SQLALCHEMY_DATABASE_URI"] = "nuh uh!"
 app.secret_key = generate_code()
 app.permanent_session_lifetime = timedelta(days = 3)
 
