@@ -1,0 +1,434 @@
+@charset "utf-8";
+@font-face {
+  font-family: Audiowide;
+  src: url("assets/head-font.woff");
+}
+
+
+
+/*  Documentation
+
+    All important styles are here, as well as some minor (for now)
+
+    Colors: 1: #125C13 (dark green)
+            2: #3E7C17 (green)
+            3: #F4A442 (orange)
+            4: #E8E1D9 (white)
+            5: #113311 (black)
+*/
+
+
+
+
+
+  /* Global stylings */
+
+:root {
+  --c1: #125C13;
+  --c2: #3E7C17;
+  --c3: #F4A442;
+  --c4: #E8E1D9;
+  --c5: #113311;
+}
+
+* {
+  font-size: 1.2rem;
+  font-family: Arial, Helvetica, sans-serif;
+  box-sizing: border-box;
+  
+  scroll-behavior: smooth;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  background: var(--c4);
+  color: var(--c5);
+  box-sizing: border-box;
+  line-height: 25px;
+}
+
+footer {
+  background: var(--c1);
+  color: var(--c4);
+  min-height: 50px;
+  padding: 10px;
+  margin-bottom: 0;
+  text-align: center;
+
+  font-size: 1.5rem;
+  align-items: center;
+
+  justify-content: space-around;
+
+  box-shadow: 0 0 10px grey;
+}
+
+footer #backToTop {
+  background: var(--c1);
+  padding: 10px;
+  margin: 5px 5px 5px 5px;
+  border-radius: 50px;
+  
+
+  position: relative;
+  float: right;
+  bottom: 40px;
+}
+
+footer a {
+  color: var(--c4);
+}
+
+a {
+  text-decoration: none;
+  color: var(--c2);
+}
+
+a:hover, a:focus {text-decoration: underline;}
+
+button {
+  background-color: var(--c1);
+  color: var(--c4);
+  font-size: 2rem;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  transition: all 0.3s ease-out;
+}
+
+button:hover, button:focus {
+  background-color: var(--c2);
+  box-shadow: 0 0 15px lime;
+}
+
+button:disabled {
+  background-color: #888;
+}
+
+button:disabled:hover {
+  background-color: #ccc;
+  box-shadow: none;
+}
+
+h1, h2, h3 {
+  font-family: Audiowide, monospace; 
+  line-height: initial;
+}
+
+h1 {font-size: 3rem;}
+h2 {font-size: 2.4rem;}
+h3 {font-size: 1.8rem;}
+
+main {
+  padding: 50px 0;
+}
+
+article {
+  margin-bottom: 15px;
+}
+
+details {
+  margin: 0 25px;
+}
+
+
+/* For PDF files */
+embed[type="application/pdf"] {
+  width: 100%;
+  height: 600px;
+}
+
+
+
+
+
+  /* Global classes & IDs */
+
+.flex {
+  display: flex;
+}
+
+.flex_center {
+  justify-content: center;
+}
+
+.center_text {
+  text-align: center;
+}
+
+
+
+
+
+
+
+/* Navbar */
+
+header {
+  background-color: var(--c1);
+  position: fixed;
+  width: 100%;
+  z-index: 9999;
+  box-shadow: 0 0 10px grey;
+}
+
+header h1 {
+  font-size: 1.2rem;
+  float: left;
+  display: block;
+  margin: 0;
+  padding: 5px 10px;
+  color: var(--c4);
+}
+
+header i {
+  margin: 5px;
+  color: var(--c4);
+}
+
+nav {
+  position: absolute;
+  top: 100%;
+  left: 0;
+
+  background-color: var(--c1);
+  color: var(--c4);
+
+  transform: scaleY(0);
+  transform-origin: top;
+
+  transition: all 0.3s ease-out;
+}
+
+.usrSetng {
+  position: absolute;
+  top: 100%;
+  right: 15px;
+
+  background-color: var(--c1);
+  color: var(--c4);
+  font-size: 1.2rem;
+
+  transform: scaleY(0);
+  transform-origin: top;
+  font-size: 1.2rem;
+
+  transition: all 0.3s ease-out;
+}
+
+nav ul, .usrSetng ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav li, .usrSetng li {
+  margin: 0;
+  width: fit;
+}
+
+nav a, .usrSetng a {
+  color: var(--c4);
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 5px 15px;
+  display: block;
+  width: fit;
+  height: calc(120% - 3px);
+  transition: all 0.3s ease-out;
+}
+
+nav a:hover, .usrSetng a:hover {
+  background-color: var(--c2);
+}
+
+#navToggle, #usrToggle {
+  display: none;
+}
+
+#navToggle:checked ~ nav, #usrToggle:checked ~ .usrSetng {
+  display: block;
+  transform: scaleY(1)
+}
+
+
+#menuNavBtn, #usrNavBtn {
+  float: right;
+  font-size: 2rem;
+  margin-right: 10px;
+}
+
+
+@media screen and (min-width: 801px) {
+  #menuNavBtn{
+    display: none;
+  }
+
+  nav {
+    position: initial;
+    top: auto;
+    left: auto;
+    display: inline-block;
+    transform: scaleY(1)
+  }
+
+  nav ul {
+    display: flex;
+  }
+
+  nav li {
+    width: initial;
+  }
+}
+
+
+
+
+
+/* Login & Register & Contact pages */
+
+.form_page {
+  width: max(80vw);
+  background: var(--c4);
+  padding: 5px;
+  margin: auto;
+}
+
+.login_register_page h1 {
+  width: 100%;
+  font-size: min(10vw, 3rem);
+}
+
+.login_reg_form {
+  display: flex;
+  flex-wrap: wrap;
+  flex-flow: column;
+  gap: 15px;
+}
+
+.login_reg_form input, .login_reg_form textarea {
+  font-size: 1rem;
+  border-radius: 5px;
+}
+
+.login_reg_form input:invalid, .login_reg_form textarea:invalid {
+  border-color: red;
+}
+
+.form_errors {
+  margin: 45px 50px;
+  padding: 10px;
+  border: 3px solid red;
+}
+
+@media screen and (min-width: 801px) {
+  .login_reg_form {
+    display: grid;
+    grid-template-columns: 250px 1fr;
+    grid-row-gap: 25px;  
+  }
+}
+
+
+
+
+
+  /* Matrix rain */
+
+#matrix_rain {
+  background: url("assets/matrix_rain.gif");
+  overflow-x: hidden;
+}
+
+#matrix_rain h1 {
+  /* font-size: min(32px, 60vw); */
+  font-size: calc(2rem + 2vw);
+}
+
+#matrix_rain h2 {
+  font-size: calc(1.5rem + 1.2vw);
+}
+
+
+
+
+
+  /* Typewriter */
+
+.typewriter {
+  display: inline-block; 
+  width: fit;
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 3rem;
+  line-height: initial;
+}
+
+.typewriter h1, .typewriter h2 {
+  font-family: monospace;
+  color: var(--c4);
+  text-shadow: 0 0 10px var(--c4);
+  overflow-x: hidden; /* Ensures the content is not revealed until the animation */
+  overflow-y: auto;
+  border-right: .15em solid; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 15px auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .1em; /* Adjust as needed */
+  animation: 
+    typing 2s steps(32, end),
+    blink-caret .5s step-end infinite;
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: var(--c4) }
+}
+
+
+
+
+
+  /* Container Scroll Snapping */
+
+.container {
+  height: 100%;
+  overflow-x: hidden;
+}
+
+.container article {
+  width: 100vw;
+  scroll-snap-align: start;
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+}
+
+.container article > * {
+  flex: 1 1 min(500px, 45vw);
+}
+
+.container article img {
+  width: calc(max(50%, 500px) - 50px);
+  height: auto;
+  margin-top: 15px;
+}
+
+.container article div {
+  width: 35%;
+  margin-left: 20px;
+  margin-right: 20px;
+  height: auto;
+}
+
+.container article:nth-child(odd) {
+  flex-direction: row-reverse
+}

@@ -1,0 +1,51 @@
+{% extends "homebase.html" %}
+{% block title %}Prijava - Programirko{% endblock %}
+
+{% block body %}
+
+<main>
+
+    <section id="loginPage" class="form_page">
+        <br>
+        <a href="/"><i class="fas fa-chevron-left"></i></a>
+        <div>
+            <h1>Prijavite se</h1>
+            <form action="" method="POST">
+                <div class="login_reg_form">
+
+                    <div>
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <label for="username">Korisničko ime <span style="color:red;">*</span></label>
+                    </div>
+                    <input type="text" name="username" minlength="6" placeholder="Unesite korisničko ime" required>
+
+
+                    <div>
+                        <i class="fas fa-key fa-2x"></i>
+                        <label for="password">Lozinka <span style="color:red;">*</span></label>
+                    </div>
+                    <input type="password" name="password" minlength="8" placeholder="Unesite lozinku" required>
+                </div>
+
+                <p>Nemate nalog? Registrujte se <a href="/register">ovde</a>.</p>
+
+                <button type="submit" name="subm" style="float: right;">Potvrda</button>
+            </form>
+            <br>
+        </div>
+    </section>
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="form_errors">
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <br><br>
+
+</main>
+
+{% endblock %}

@@ -1,0 +1,83 @@
+{% extends "homebase.html" %}
+
+{% block title %}Video - Programirko{% endblock %}
+
+{% block head %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='videositestyles.css')}}">
+{% endblock %}
+
+{% block body %}
+
+<main id="vid_pg">
+    
+    <!-- Search tab -->
+    
+    <div class="center_text" style="margin-top: 15px">
+        <label for="srch"><i class="fas fa-search" style="margin: 0; padding: 3px;"></i></label>
+        <input type="search" name="srch" id="srch" @keyup.enter="searchYt()" style="margin: auto;">
+        <button @click="searchYt()" style="margin: auto; font-size: 1em;">Pretraži</button>
+    </div>
+
+    <!-- Video -->
+
+    {% if watch != "" %}
+        <section class="flex" id="watch">
+            <iframe
+                src="https://www.youtube.com/embed/{{ watch['videoID'] }}" 
+                title="YouTube video player" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <h3>{{ watch['videoTitle'] }}</h3>
+            <h5><a href="https://www.youtube.com/channel/{{ watch['channelID'] }}" target="_blank">{{ watch['channelName'] }}</a></h5>
+            <br><details>
+                <summary>Opis / Deskripcija:</summary>
+                <p loading="lazy">{{ watch['desc'] }}</p>
+            </details>
+        </section>
+    {% endif %}
+
+    <!-- Search results -->
+
+    <section class="video_list" v-if="search.length != 0">
+        <h3>Pretraga:</h3>
+        <ul class="flex">
+            <li v-for="s in search">
+                <a :href="'/videos/' + s.videoID">
+                <img :src="s.thumbnailURL" alt="Thumbnail">
+                <h5>${ s.videoTitle }</h3>
+                <p>${ s.channelName }</p>
+                </a>
+            </li>
+        </ul>
+        
+    </section>
+    <br>
+
+    <!-- Recommendations -->
+
+    <section>
+        <article class="video_list "v-for="items in recommend">
+            <h3>Preporuka:</h3>
+            <ul class="flex">
+                <li v-for="r in items">
+                    <a :href="'/videos/' + r.videoID">
+                        <img :src="r.thumbnailURL" alt="Thumbnail">
+                        <h5>${ r.videoTitle }</h3>
+                        <p>${ r.channelName }</p>
+                    </a>
+                </li>
+            </ul>
+        </article>
+
+    </section>
+
+    <!-- Recommendations -->
+
+
+</main>
+
+{% endblock %}
+
+{% block additions %}
+    <script src="{{ url_for('static', filename='vidloader.js') }}"></script>
+{% endblock %}

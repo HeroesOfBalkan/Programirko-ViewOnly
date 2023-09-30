@@ -1,0 +1,151 @@
+{% extends "homebase.html" %}
+
+{% block title %}Video - Programirko{% endblock %}
+
+{% block body %}
+    
+<main>
+
+    <section>
+
+        <article class="center_text">
+            <h1>Baza puškica</h1>
+            <p>Ovde možete naći mnoge puškice (Cheatsheets) za različite jezike, tehnologije, tehnike,...</p>
+
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    JavaScript Cheatsheets (eng)  
+                    <a href="{{ url_for('static', filename='assets/pdf_en_js_cs.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_en_js_cs.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Python Guide (eng)
+                    <a href="{{ url_for('static', filename='assets/pdf_en_python_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_en_python_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Vue 2 Cheatsheets (eng)
+                    <a href="{{ url_for('static', filename='assets/pdf_en_vue2_cs.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_en_vue2_cs.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Vue 3 Cheatsheets (eng)
+                    <a href="{{ url_for('static', filename='assets/pdf_en_vue3_cs.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_en_vue3_cs.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Računarske mreže (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_computer_network_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_computer_network_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    C++ programski jezik (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_cpp_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_cpp_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Java programski jezik (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_java_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_java_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Razvoj mobilnih aplikacija (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_mobile_app_development_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_mobile_app_development_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Zaštita računarskih mreža (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_network_protection_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_network_protection_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Objektivno Orjentisano Programiranje u C++ Programskom jeziku (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_oop_cpp_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_oop_cpp_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Osnove Python programskog jezika (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_python_basics_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_python_basics_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Razvoj apkikativnih softvera (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_software_development_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_software_development_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+        <article>
+            <details>
+                <summary>
+                    Web dizajn: HTML, CSS i JavaScript (srb)
+                    <a href="{{ url_for('static', filename='assets/pdf_rs_web_design_html_css_js_guide.pdf') }}" download><i class="fas fa-download"></i></a>
+                </summary>
+                <embed src="{{ url_for('static', filename='assets/pdf_rs_web_design_html_css_js_guide.pdf') }}" type="application/pdf" loading="lazy">
+            </details>
+        </article>
+
+    </section>
+
+</main>
+
+{% endblock %}

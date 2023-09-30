@@ -1,0 +1,44 @@
+{% extends "homebase.html" %}
+
+{% block title %}Onlajn editor{% endblock %}
+
+{% block body %}
+
+{% block head %}
+    <script src="{{ url_for('static', filename='special/codemirror-5.65.1/lib/codemirror.js') }}"></script>
+    <link rel="stylesheet" href="{{ url_for('static', filename='special/codemirror-5.65.1/lib/codemirror.css') }}">
+    
+    <link rel="stylesheet" href="{{ url_for('static', filename='special/codemirror-5.65.1/theme/dracula.css') }}">
+
+    <script src="{{ url_for('static', filename='special/codemirror-5.65.1/mode/xml/xml.js') }}"></script>
+    <script src="{{ url_for('static', filename='special/codemirror-5.65.1/mode/python/python.js') }}"></script>
+{% endblock %}
+
+<main>
+
+    <section id="editorPlayground">
+        <textarea name="" id="editor"></textarea>
+
+        <script>
+            var editor = CodeMirror.fromTextArea(
+                document.getElementById('editor'), {
+                    mode: 'python',
+                    theme: 'dracula',
+                    lineNumbers: true
+                }
+            );
+
+        </script>
+    </section>
+
+    <section id="editorExecute">
+
+    </section>
+
+    <p>Urađeno pomoću <a href="https://codemirror.net/index.html" target="_blank">CodeMirror</a> biblioteke</p>
+
+    <pre>BETA: U izradi i testiranjima</pre>
+
+</main>
+
+{% endblock %}

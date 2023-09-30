@@ -1,0 +1,118 @@
+{% extends "homebase.html" %}
+{% block title %}Prijava - Programirko{% endblock %}
+
+{% block body %}
+
+<main>
+
+    <section id="userSettingsPage" class="form_page">
+        <br>
+        <a href="/"><i class="fas fa-chevron-left"></i></a>
+        <div>
+            <h1>Podešavanje naloga</h1>
+            <form action="" method="POST">
+                <div class="login_reg_form">
+
+                    <div>
+                        <i class="fas fa-user-circle fa-2x"></i>
+                        <label for="username">Korisničko ime <span style="color:red;">*</span></label>
+                    </div>
+                    <input type="text" name="username" minlength="6" placeholder="Unesite korisničko ime" value="{{ usr }}" required>
+
+                    <div>
+                        <i class="fas fa-key fa-2x"></i>
+                        <label for="password">Nova lozinka <span style="color:red;">**</span></label>
+                    </div>
+                    <input type="password" name="new_password" minlength="8" placeholder="Unesite lozinku">
+
+                    <div>
+                        <i class="fas fa-key fa-2x"></i>
+                        <label for="password">Ponovite lozinku <span style="color:red;">**</span></label>
+                    </div>
+                    <input type="password" name="repeat_npw" minlength="8" placeholder="Ponovite lozinku">
+
+                    <div>
+                        <i class="fas fa-brain fa-2x"></i>
+                        <label for="interests">Interesi</label>
+                    </div>
+                    <details>
+                        <summary>
+                            Otvorite da izaberete Vaše interese (nije obavezno)
+                        </summary>
+                        <input type="checkbox" name="interests" value="Python" {{ "checked" if "Python" in intrs }}><span>Python</span><br>
+                        <input type="checkbox" name="interests" value="Java" {{ "checked" if "Java" in intrs }}><span>Java</span><br>
+                        <input type="checkbox" name="interests" value="C++" {{ "checked" if "C++" in intrs }}><span>C++</span><br>
+                        <input type="checkbox" name="interests" value="C" {{ "checked" if "C" in intrs }}><span>C</span><br>
+                        <input type="checkbox" name="interests" value="C#" {{ "checked" if "C#" in intrs }}><span>C#</span><br>
+                        <input type="checkbox" name="interests" value="JavaScript" {{ "checked" if "JavaScript" in intrs }}><span>JavaScript</span><br>
+                        <input type="checkbox" name="interests" value="HTML" {{ "checked" if "HTML" in intrs }}><span>HTML</span><br>
+                        <input type="checkbox" name="interests" value="CSS" {{ "checked" if "CSS" in intrs }}><span>CSS</span><br>
+                        <input type="checkbox" name="interests" value="Software Development" {{ "checked" if "Software Development" in intrs }}><span>Softversko inžinjerstvo</span><br>
+                        <input type="checkbox" name="interests" value="Web Development" {{ "checked" if "Web Development" in intrs }}><span>Web inžinjerstvo</span><br>
+                        <input type="checkbox" name="interests" value="Mobile Development" {{ "checked" if "Mobile Development" in intrs }}><span>Mobilno inžinjerstvo</span><br>
+                        <input type="checkbox" name="interests" value="Game Development" {{ "checked" if "Game Development" in intrs }}><span>Inžinjerstvo igara</span><br>
+                        <input type="checkbox" name="interests" value="Networking" {{ "checked" if "Networking" in intrs }}><span>Mreže</span><br>
+                        <input type="checkbox" name="interests" value="Administration" {{ "checked" if "Administration" in intrs }}><span>Administracija</span><br>
+                        <input type="checkbox" name="interests" value="Cyber Security" {{ "checked" if "Cyber Security" in intrs }}><span>Sajber bezbednost</span><br>
+                        <input type="checkbox" name="interests" value="Raster Graphics" {{ "checked" if "Raster Graphics" in intrs }}><span>Rasterska grafika</span><br>
+                        <input type="checkbox" name="interests" value="Vector Graphics" {{ "checked" if "Vector Graphics" in intrs }}><span>Vektorski grafika</span><br>
+                        <input type="checkbox" name="interests" value="Video Montage" {{ "checked" if "Video Montage" in intrs }}><span>Video obrada</span><br>
+                        <input type="checkbox" name="interests" value="Audio Montage" {{ "checked" if "Audio Montage" in intrs }}><span>Audio obrada</span><br>
+                        <input type="checkbox" name="interests" value="Animation" {{ "checked" if "Animation" in intrs }}><span>Animacije</span><br>
+                        <input type="checkbox" name="interests" value="Math" {{ "checked" if "Math" in intrs }}><span>Matematika</span><br>
+                    </details>
+
+                    <div>
+                        <i class="fas fa-graduation-cap fa-2x"></i>
+                        <label for="pre_knowledge">Predznanje</label>
+                    </div>
+                    <select name="pre_knowledge" id="">
+                        <option value="beginner" {{ "selected" if knw == "beginner" }}>Početnik</option>
+                        <option value="average" {{ "selected" if knw == "average" }}>Prosečan</option>
+                        <option value="mediocore" {{ "selected" if knw == "mediocore" }}>Srednji</option>
+                        <option value="advanced" {{ "selected" if knw == "advanced" }}>Napredan</option>
+                        <option value="senior" {{ "selected" if knw == "senior" }}>Senior</option>
+                    </select>
+
+                    <div>
+                        <i class="fas fa-chalkboard-teacher fa-2x"></i>
+                        <label for="learning_plan">Plan učenja <span style="color:red;">*</span></label>
+                    </div>
+                    <select name="learning_plan" id="" required>
+                        <option value="free">Besplatan</option>
+                        <option value="premium" disabled>Premium</option>
+                    </select>
+
+                </div>
+
+                <br><br>
+                <div class="login_reg_form">
+                    <div>
+                        <i class="fas fa-key fa-2x"></i>
+                        <label for="password">Lozinka <span style="color:red;">*</span></label>
+                    </div>
+                    <input type="password" name="check_password" minlength="8" placeholder="Potvrdite trenutnu lozinku" value="" required>
+                </div>
+                
+                <br>
+                <button type="submit" name="subm" style="float: right;">Potvrda</button>
+            </form>
+        </div>
+    </section>
+
+
+
+    {% with messages = get_flashed_messages() %}
+        {% if messages %}
+            <div class="form_errors">
+                {% for msg in messages %}
+                    <p>{{msg}}</p>
+                {% endfor %}
+            </div>
+        {% endif %}
+    {% endwith %}
+    <br><br>
+    
+</main>
+
+{% endblock %}

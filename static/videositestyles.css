@@ -1,0 +1,43 @@
+#watch {
+    width: 90vw;
+    margin: 15px auto;
+    flex-direction: column;
+}
+
+#watch iframe {
+    height: 60vh;
+    width: 80%;
+    display: inline;
+    margin: auto;
+}
+
+#watch h3, #watch h5 {
+    margin: 10px 0;
+}
+
+.video_list {
+    /* overflow-x: scroll; */
+}
+
+.video_list h1, .video_list h2, .video_list h3 {
+    margin-left: 15px;
+}
+
+.video_list ul {
+    list-style: none;
+    overflow-x: scroll;
+    padding-right: 40px;
+}
+
+.video_list li, .video_list img {
+    width: 360px;
+}
+
+.video_list li {
+    margin-bottom: 25px;
+    margin-left: 15px;
+}
+
+.video_list h5, .video_list p {
+    margin: 10px 0;
+}

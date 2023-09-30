@@ -1,0 +1,93 @@
+{% extends "homebase.html" %}
+
+{% block title %}Lekcije - Programirko{% endblock %}
+
+{% block body %}
+
+<br>
+
+<main id="vm"><a name="top"></a>
+
+    <section class="container">
+
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-video fa-2x"></i>
+                    <h2 style="display: inline-block"> Video lekcije</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, id voluptates? Ea inventore ullam dolorum in laborum. Architecto, incidunt cupiditate?</p>
+                <a href="videos"><button>Pogledajte videe</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/videos.jpeg') }}" alt="Maskota" style="height: 400px; width: 400px;">
+        </article>
+        
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-comments fa-2x"></i>
+                    <h2 style="display: inline-block"> Učenje kroz pitanja</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aspernatur facere quis aliquam voluptatum voluptatem commodi qui quia praesentium? Beatae!</p>
+                <a href=""><button disabled>Odgovaraj (u izradi)</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/quiz_time.jpg') }}" alt="Learning together" width="50%" height="auto">
+        </article>
+        
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-code fa-2x"></i>
+                    <h2 style="display: inline-block"> NOVO: Demo projekti</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aspernatur facere quis aliquam voluptatum voluptatem commodi qui quia praesentium? Beatae!</p>
+                <a href=""><button disabled>Napravi (u izradi)</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/demo_projects.jpg') }}" alt="Learning together" width="50%" height="auto">
+        </article>
+
+    </section>
+
+    <br>
+    <section style="margin: 5px 25px;">
+
+        <h2 class="center_text">Zašto učiti ovde?</h2>
+
+        <article>
+            <i class="fas fa-user-graduate fa-2x"></i> <h3 style="display: inline-block"> Lako se uči</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+
+        <article>
+            <i class="fas fa-award fa-2x"></i> <h3 style="display: inline-block"> Dajemo preporuke</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+
+        <article>
+            <i class="fas fa-laptop fa-2x"></i> <h3 style="display: inline-block"> Pristupite odakle god želite</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+
+        <article>
+            <i class="fas fa-feather-alt fa-2x"></i> <h3 style="display: inline-block"> Jednostavan za korišćenje</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+        
+        <article>
+            <i class="fas fa-user-secret fa-2x"></i> <h3 style="display: inline-block"> Privatnost je samo Vaša</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+
+        <article>
+            <i class="fas fa-money-bill-wave fa-2x"></i> <h3 style="display: inline-block"> Besplatno je!</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Enim dolores modi amet veritatis alias. Animi.</p>
+        </article>
+
+    </section>
+
+</main>
+
+{% endblock %}

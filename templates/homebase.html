@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="sr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="Tvog drugar programer">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = 'styles.css') }}">
+        <link rel="shortcut icon" type="image/png" href="{{ url_for('static', filename = 'assets/logo32p.png') }}">
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+        <title>{% block title %}{% endblock %}</title>
+        {% block head %}{% endblock %}
+    </head>
+    <body>
+
+        <header>
+            <h1>Programirko |</h1>
+            <input type="checkbox" id="navToggle">
+            <input type="checkbox" id="usrToggle">
+          
+            <nav>
+              <ul>
+                <li><a href="/">Početna</a></li>
+                <li><a href="/lessons">Lekcije</a></li>
+                <li><a href="/cheatsheets">Puškice</a></li>
+                <li><a href="/editor">Editor</a></li>
+              </ul>
+            </nav>
+          
+            <label for="usrToggle" id="usrNavBtn"><i class="fas fa-user-circle"></i></label>
+            <label for="navToggle" id="menuNavBtn"><i class="fas fa-bars"></i></label>
+          
+            <div class="usrSetng">
+              <ul>
+                {% if usr != "" %}
+                  <li><a href="user">{{ usr }}</a></li>
+                  <li><a href="logout">Odjavite se</a></li>
+                {% else %}
+                  <li><a href="login">Prijavite se</a></li>
+                  <li><a href="register">Registrujte se</a></li>
+                {% endif %}
+                
+              </ul>
+            </div>
+          </header>
+
+        {% block body %}
+        {% endblock %}
+
+        <footer>
+          <div id="backToTop"><a href="#top">
+            <i class="fas fa-chevron-up 3x"></i></a>
+          </div>
+            <p>&copy; Marko Macura</p>
+            
+        </footer>
+
+        
+        <script src="https://kit.fontawesome.com/5120c6eb43.js" crossorigin="anonymous"></script>
+        {% block additions %}
+          <script src="{{ url_for('static', filename='index.js') }}"></script>
+        {% endblock %}
+    </body>
+</html>

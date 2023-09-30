@@ -1,0 +1,81 @@
+{% extends "homebase.html" %}
+{% block title %}Programirko{% endblock %}
+
+{% block body %}
+
+<br>
+<section id="matrix_rain">
+    <br>
+    <div class="flex" style="flex-direction: column; flex-wrap: wrap; z-index: 52; justify-content: center; align-content: center;">
+        <div class="typewriter">
+            <h1 style="animation: typing 1s steps(11, end), blink-caret .5s step-end infinite;">Programirko</h1>
+        </div>
+        <br>
+        <div class="typewriter">
+            <h2>Tvoj drugar programer</h2>
+        </div>
+    </div>
+</section>
+
+<main id="vm"><a name="top"></a>
+
+    <section class="container">
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-robot fa-2x"></i>
+                    <h2 style="display: inline-block"> Tvoj drugar</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Asperiores, id voluptates? Ea inventore ullam dolorum in laborum. Architecto, incidunt cupiditate?</p>
+                <p>Pogledaj šta još može da Vam pruža...</p>
+                <a href="videos"><button>Odgledajte videe</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/ur_friend.jpg') }}" alt="Maskota" loading="lazy">
+        </article>
+        
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-book-open fa-2x"></i>
+                    <h2 style="display: inline-block"> Učimo zajedno</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aspernatur facere quis aliquam voluptatum voluptatem commodi qui quia praesentium? Beatae!</p>
+                <a href="lessons"><button>Idite do lekcija</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/learn_together.png') }}" alt="Learning together" loading="lazy">
+        </article>
+        
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-wifi fa-2x"></i>
+                    <h2 style="display: inline-block"> Širok spektar znanja</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aspernatur facere quis aliquam voluptatum voluptatem commodi qui quia praesentium? Beatae!</p>
+                <a href="cheatsheets"><button>Uzmite puškice!</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/wide_knowledge.jpg') }}" alt="Learning together" loading="lazy">
+        </article>
+        
+        <article>
+            <div>
+                <span>
+                    <i class="fas fa-desktop fa-2x"></i>
+                    <h2 style="display: inline-block"> I znanje, i praksa</h2>
+                </span>
+                <br>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque aspernatur facere quis aliquam voluptatum voluptatem commodi qui quia praesentium? Beatae!</p>
+                <a href=""><button disabled>Pišite kod (neaktivno)</button></a>
+            </div>
+            <img src="{{ url_for('static', filename='assets/it_wideness.png') }}" alt="Learning together" loading="lazy">
+        </article>
+    </section>
+
+</main>
+
+
+
+{% endblock %}
